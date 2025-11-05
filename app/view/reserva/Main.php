@@ -66,8 +66,9 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary w-50" data-bs-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-primary w-50">Efectuar Pagamento</button>
+                                    <div class="d-flex"></div>justify-content-end
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                    <button type="submit" class="btn btn-primary">Efectuar Pagamento</button>
                                 </div>
                             </div>
                         </div>

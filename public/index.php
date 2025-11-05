@@ -6,7 +6,7 @@
     #$dispatch = new \app\Dispatch();
 
     $bd = new app\model\Conexao();
-    $bd->conexao_db();
+    var_dump($bd->conexao_db());
 
 
 

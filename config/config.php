@@ -23,4 +23,4 @@
     define('DBHOST', "localhost");
     define('DBNAME', "projecto");
     define('DBUSER', "txizanda");
-    define('DBPASS', "Adm1n.scc.@!");
+    define('DBPASS', "");

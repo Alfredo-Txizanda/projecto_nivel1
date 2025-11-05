@@ -76,10 +76,10 @@
                                 <div class="modal-footer">
                                     <div class="row w-100">
                                         <div class="col-6 text-left">
-                                            <button type="button" class="btn btn-secondary w-50">Botão Esquerdo</button>
+                                            <button type="button" class="btn btn-secondary">Botão Esquerdo</button>
                                         </div>
                                         <div class="col-6 text-right">
-                                            <button type="button" class="btn btn-primary w-50">Botão Direito</button>
+                                            <button type="button" class="btn btn-primary">Botão Direito</button>
                                         </div>
                                     </div>
                                 </div>

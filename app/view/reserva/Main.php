@@ -9,7 +9,7 @@
 
                 <form id="reservationForm">
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
+                    <button type="button" class="btn btn-primary-outline w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="#reserva">Reservar</button>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

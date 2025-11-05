@@ -68,5 +68,3 @@
     </div>
 </section>
 
-<script src="<?= DIRJS . 'projecto.js'; ?>"></script>
-

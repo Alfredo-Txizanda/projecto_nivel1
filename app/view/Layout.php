@@ -27,12 +27,12 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo DIRPAGE; ?>">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= DIRPAGE . 'quarto'; ?>">Quartos</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="#" data-toggle="modal" data-target="#reservaModal">Reserva</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reservaModal">Reserva</a></li>
                         <li class="nav-item"> <a class="nav-link" href="<?= DIRPAGE . 'admin'; ?>"></a></li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-outline-success" type="submit">Procurar</button>
+                        <button class="btn btn-outline-success" type="submit">Procurar</button>p
                     </form>
                 </div>
             </div>
@@ -97,9 +97,7 @@
             <!-- FIM FOOTER -->
             <?php echo $this->addFooter(); ?>
         </div>
-
     </div>
+    <?php include 'reserva/Main.php'; ?>
 </body>
-
 </html>
- 

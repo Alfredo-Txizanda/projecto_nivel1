@@ -3,7 +3,11 @@
     require_once ("../config/config.php");
     require_once ("../src/vendor/autoload.php");
 
-    $dispatch = new \app\Dispatch();
+    #$dispatch = new \app\Dispatch();
+
+
+
+
 
 
 

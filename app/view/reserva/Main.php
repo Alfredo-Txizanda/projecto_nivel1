@@ -8,6 +8,8 @@
                 <p class="text-muted mb-4">O nosso hotel é certificado por seguir as precauções e medidas de segurança para deixar a sua estadia segura e única.</p>
 
                 <form id="reservationForm">
+
+                    <!--
                     <div class="row mb-3">
                         <div class="col-md-6 mb-3">
                             <label for="entrada" class="form-label">Entrada</label>
@@ -43,6 +45,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Efectuar Pagamento</button>
+                    -->
                 </form>
             </div>
 

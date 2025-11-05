@@ -9,7 +9,7 @@
                 <li><a href="#" data-tab="dashboard" class="active">Dashboard</a></li>
                 <li><a href="#" data-tab="reserva">Reservas</a></li>
                 <li><a href="#" data-tab="quarto">Quartos</a></li>
-                <li><a href="#" data-tab="no-show">No-Show</a></li>
+                <li><a href="#" data-tab="preco">Preços</a></li>
                 <li><a href="#" data-tab="utilizador">Utilizadores</a></li>
                 <li><a href="#" data-tab="servico">Serviços</a></li>
 

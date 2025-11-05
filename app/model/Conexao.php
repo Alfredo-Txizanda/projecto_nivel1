@@ -9,7 +9,7 @@
         {
             try {
                 $con = new \PDO("mysql:host=".DBHOST.";dbname=".DBNAME."","".DBUSER."","".DBPASS."");
-                echo ("Conexão efectuada com sucesso");
+                //echo ("Conexão efectuada com sucesso");
                 return $con;
             }catch(\PDOException $erro) {
                 //echo ("Erro ao conectar a Base de dados");

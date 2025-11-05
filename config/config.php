@@ -20,7 +20,7 @@
     define('DIRJSADMIN', DIRPAGE . "public/admin/js/");
 
     #BASE DE DADOS
-    define('DBHOST', "localhost");
+    define('DBHOST', "localhost:3007");
     define('DBNAME', "projecto");
     define('DBUSER', "txizanda");
     define('DBPASS', "");

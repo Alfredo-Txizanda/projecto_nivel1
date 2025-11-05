@@ -11,9 +11,10 @@
                 <li><a href="#" data-tab="quarto">Quartos</a></li>
                 <li><a href="#" data-tab="preco">Preços</a></li>
                 <li><a href="#" data-tab="consumo">Consumos</a></li>
-                <li><a href="#" data-tab="contrato">Contratos</a></li>
+                <li><a href="#" data-tab="empresa">Empresa</a></li>
                 <li><a href="#" data-tab="utilizador">Utilizadores</a></li>
                 <li><a href="#" data-tab="servico">Serviços</a></li>
+                <li><a href="#" data-tab="relatorio">Relatórios</a></li>
 
             </ul>
         </nav>

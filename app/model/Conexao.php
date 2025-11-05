@@ -12,7 +12,7 @@
                 echo ("Conexão efectuada com sucesso");
                 return $con;
             }catch(\PDOException $erro) {
-                echo ("Erro ao conectar a Base de dados");
+                //echo ("Erro ao conectar a Base de dados");
                 return $erro->getMessage();
             }
         }

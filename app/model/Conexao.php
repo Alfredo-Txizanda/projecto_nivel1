@@ -2,7 +2,7 @@
 
     namespace app\model;
 
-    class Conexao
+    abstract class Conexao
     {
         #CONEXÃO COM A BASE DE DADOS
         public function conexao_db()

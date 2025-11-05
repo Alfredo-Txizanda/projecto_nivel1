@@ -3,10 +3,8 @@
     require_once ("../config/config.php");
     require_once ("../src/vendor/autoload.php");
 
-    #$dispatch = new \app\Dispatch();
+    $dispatch = new \app\Dispatch();
 
-    $bd = new app\model\Conexao();
-    var_dump($bd->conexao_db());
 
 
 

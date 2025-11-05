@@ -132,8 +132,3 @@ document.addEventListener('DOMContentLoaded', function() {
 //DETALHES DE QUARTOS - FIM
 
 /*RESERVA - MODAL*/
-$(document).ready(function () {
-    $("#abrirModal").click(function () {
-        $("#modalReserva").modal("show");
-    });
-});

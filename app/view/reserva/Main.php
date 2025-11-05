@@ -1,7 +1,5 @@
-<style type="text/css" href="<?= DIRCSS . 'estilo.css'; ?>"></style>
-
-<section class="bg-primary fundo-reserva">
-    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+<section>
+    <div class="container-fluid">
         <div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

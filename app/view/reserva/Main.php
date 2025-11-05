@@ -47,12 +47,10 @@
                                         <label for="room" class="form-label">Quartos</label>
                                         <select class="form-select" id="room" required>
                                             <option value="">Seleciona o quarto</option>
-                                            <option value="individual">Quarto Individual</option>
-                                            <option value="duplo">Quarto Duplo</option>
-                                            <option value="twin">Quarto Twin</option>
-                                            <option value="triplo">Quarto Triplo</option>
-                                            <option value="executiva">Suite Executiva</option>
-                                            <option value="presidencial">Suite Presidencial</option>
+                                            <option value="individual">Single</option>
+                                            <option value="duplo">Double</option>
+                                            <option value="twin">Twin</option>
+                                            <option value="triplo">Familary</option>
                                         </select>
                                     </div>
 

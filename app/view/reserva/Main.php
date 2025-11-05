@@ -64,9 +64,9 @@
                                             <input type="number" class="form-control" id="crianca" min="0" max="10" required>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary w-100">Efectuar Pagamento</button>
                                 </div>
                                 <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary w-100">Efectuar Pagamento</button>
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-primary">Send message</button>
                                 </div>

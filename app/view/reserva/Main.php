@@ -8,8 +8,9 @@
                 <p class="text-muted mb-4">O nosso hotel é certificado por seguir as precauções e medidas de segurança para deixar a sua estadia segura e única.</p>
 
                 <form id="reservationForm">
-
+                    <!--
                     <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="#reserva">Reservar</button>
+                    -->
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

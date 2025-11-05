@@ -65,14 +65,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--
+
                                 <div class="modal-footer">
-                                    <div class="d-flex justify-content-end">
-                                        <button type="button" class="btn btn-secondary w-50" data-bs-dismiss="modal">Fechar</button>
-                                        <button type="submit" class="btn btn-primary w-50">Efectuar Pagamento</button>
-                                    </div>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                    <button type="submit" class="btn btn-primary">Efectuar Pagamento</button>
                                 </div>
-                                -->
+
+                                <!--
                                 <div class="modal-footer">
                                     <div class="row w-100">
                                         <div class="col-6 text-left">
@@ -83,6 +82,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                             </div>
                         </div>
                     </div>

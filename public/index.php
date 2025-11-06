@@ -6,8 +6,8 @@
     #$dispatch = new \app\Dispatch();
 
     $db_conexao = new \app\model\Conexao();
-    //var_dump($db_conexao->conexao_db());
-    $db_conexao->conexao_db();
+    var_dump($db_conexao->conexao_db());
+    //$db_conexao->conexao_db();
 
 
 

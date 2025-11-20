@@ -182,93 +182,24 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-
-    /**
-     * Configura a validação de data bidirecional para um par de campos.
-     * @param {HTMLInputElement} checkinInput O campo de data de check-in.
-     * @param {HTMLInputElement} checkoutInput O campo de data de check-out.
-     */
-    function setupDateValidation(checkinInput, checkoutInput) {
-        
-        function formatDate(date) {
-            const year = date.getFullYear();
-            const month = (date.getMonth() + 1).toString().padStart(2, '0');
-            const day = date.getDate().toString().padStart(2, '0');
-            return `${year}-${month}-${day}`;
-        }
-
-        function parseDate(dateString) {
-            const parts = dateString.split('-');
-            // new Date(year, monthIndex, day)
-            return new Date(parts[0], parts[1] - 1, parts[2]);
-        }
-
-        function updateCheckoutMin() {
-            if (!checkinInput.value) {
-                checkoutInput.min = '';
-                return;
-            }
-            const checkinDate = parseDate(checkinInput.value);
-            checkinDate.setDate(checkinDate.getDate() + 1);
-            const minCheckoutDate = formatDate(checkinDate);
-            checkoutInput.min = minCheckoutDate;
-
-            if (checkoutInput.value && checkoutInput.value < minCheckoutDate) {
-                checkoutInput.value = minCheckoutDate;
-            }
-        }
-
-        function updateCheckinMax() {
-            if (!checkoutInput.value) {
-                checkinInput.max = '';
-                return;
-            }
-            const checkoutDate = parseDate(checkoutInput.value);
-            checkoutDate.setDate(checkoutDate.getDate() - 1);
-            const maxCheckinDate = formatDate(checkoutDate);
-            checkinInput.max = maxCheckinDate;
-
-            if (checkinInput.value && checkinInput.value > maxCheckinDate) {
-                checkinInput.value = maxCheckinDate;
-            }
-        }
-
-        checkinInput.addEventListener('change', updateCheckoutMin);
-        checkoutInput.addEventListener('change', updateCheckinMax);
-
-        // Aplica a validação inicial
-        updateCheckoutMin();
-        updateCheckinMax();
-    }
-
-    // --- Modal de Adição ---
-    const addReservaModal = document.getElementById('addReservaModal');
-    addReservaModal.addEventListener('shown.bs.modal', function () {
-        const checkinInput = addReservaModal.querySelector('#checkin');
-        const checkoutInput = addReservaModal.querySelector('#checkout');
-        setupDateValidation(checkinInput, checkoutInput);
-    });
-
-
-    // --- Modal de Edição ---
-    const editModal = document.getElementById('editReservaModal');
+    // Modal de Edição
+    var editModal = document.getElementById('editReservaModal');
     editModal.addEventListener('show.bs.modal', function (event) {
-        // Preenchimento dos dados
-        const button = event.relatedTarget;
-        const id = button.getAttribute('data-id');
-        const hospede = button.getAttribute('data-hospede');
-        const quarto = button.getAttribute('data-quarto');
-        const checkin = button.getAttribute('data-checkin');
-        const checkout = button.getAttribute('data-checkout');
-        const estado = button.getAttribute('data-estado');
+        var button = event.relatedTarget;
+        var id = button.getAttribute('data-id');
+        var hospede = button.getAttribute('data-hospede');
+        var quarto = button.getAttribute('data-quarto');
+        var checkin = button.getAttribute('data-checkin');
+        var checkout = button.getAttribute('data-checkout');
+        var estado = button.getAttribute('data-estado');
 
-        const modalTitle = editModal.querySelector('.modal-title');
-        const idInput = editModal.querySelector('#editReservaId');
-        const hospedeInput = editModal.querySelector('#editHospede');
-        const quartoInput = editModal.querySelector('#editQuarto');
-        const checkinInput = editModal.querySelector('#editCheckin');
-        const checkoutInput = editModal.querySelector('#editCheckout');
-        const estadoInput = editModal.querySelector('#editEstado');
+        var modalTitle = editModal.querySelector('.modal-title');
+        var idInput = editModal.querySelector('#editReservaId');
+        var hospedeInput = editModal.querySelector('#editHospede');
+        var quartoInput = editModal.querySelector('#editQuarto');
+        var checkinInput = editModal.querySelector('#editCheckin');
+        var checkoutInput = editModal.querySelector('#editCheckout');
+        var estadoInput = editModal.querySelector('#editEstado');
 
         modalTitle.textContent = 'Editar Reserva #' + id;
         idInput.value = id;
@@ -277,17 +208,14 @@ document.addEventListener('DOMContentLoaded', function () {
         checkinInput.value = checkin;
         checkoutInput.value = checkout;
         estadoInput.value = estado;
-
-        // Aplica a validação de data após preencher os campos
-        setupDateValidation(checkinInput, checkoutInput);
     });
 
-    // --- Modal de Exclusão ---
-    const deleteModal = document.getElementById('deleteReservaModal');
+    // Modal de Exclusão
+    var deleteModal = document.getElementById('deleteReservaModal');
     deleteModal.addEventListener('show.bs.modal', function (event) {
-        const button = event.relatedTarget;
-        const id = button.getAttribute('data-id');
-        const idInput = deleteModal.querySelector('#deleteReservaId');
+        var button = event.relatedTarget;
+        var id = button.getAttribute('data-id');
+        var idInput = deleteModal.querySelector('#deleteReservaId');
         idInput.value = id;
     });
 });

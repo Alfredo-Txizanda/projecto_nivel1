@@ -7,7 +7,8 @@
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="#" data-tab="dashboard" class="active">Dashboard</a></li>
-                <li><a href="#" data-tab="reserva">Reservas</a></li>
+                <!--<li><a href="#" data-tab="reserva">Reservas</a></li>-->
+                <li><a href="<?= DIRPAGE . 'admin/reserva'; ?>">Reservas</a></li>
                 <li><a href="#" data-tab="quarto">Quartos</a></li>
                 <li><a href="#" data-tab="preco">Preços</a></li>
                 <li><a href="#" data-tab="consumo">Consumos</a></li>

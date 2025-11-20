@@ -7,7 +7,7 @@
         <p><i class="fa-solid fa-house"></i> / Dashboard Kenyel / Reservas</p>
     </div>
 
-    <div class="cabecalho-pagina mb-4">
+    <div class="cabecalho-pagina d-flex justify-content-end mt-4 mb-4">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReservaModal">
             <i class="fa-solid fa-plus"></i> Adicionar Reserva
         </button>

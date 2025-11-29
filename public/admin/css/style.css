@@ -44,6 +44,13 @@ logo h3:hover {opacity: 0.7;}
 .feed-text svg {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 18px;}
 .feed-time {color: #444;}
 
+/* --- Tabela --- */
+.tabela-dados table th,
+.tabela-dados table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
 /* --- Responsive Design --- */
 @media screen and (max-width: 768px) {
     header {

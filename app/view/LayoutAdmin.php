@@ -24,7 +24,7 @@
             <header class="header">
                 <div class="info-header">
                     <div class="logo">
-                        <h3>Hotel Kenyel</h3>
+                        <h3><a href="<?= DIRPAGE; ?>" style="color: white; text-decoration: none;">Hotel Kenyel</a></h3>
                     </div>
                     <div class="icons-header">
                         <i class="fa-solid fa-magnifying-glass"></i>

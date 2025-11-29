@@ -2,7 +2,7 @@
     
     <aside class="sidebar">
         <div class="sidebar-header">
-            <h3>Home</h3>
+            <h3><i class="fa-solid fa-home"></i> Home</h3>
         </div>
         <nav class="sidebar-nav">
             <ul>

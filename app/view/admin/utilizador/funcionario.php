@@ -15,7 +15,8 @@
                         <th scope="col">Cargo</th>
                         <th scope="col">Email</th>
                         <th scope="col">Telefone</th>
-                        <th scope="col">Ações</th>
+                        <th scope="col">Nº do Bilhete</th>
+                        <th scope="col">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,7 @@
                         <td>Gerente</td>
                         <td>admin@kenyel.com</td>
                         <td>+244 999 888 777</td>
+                        <td>001234567LA001</td>
                         <td>
                             <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#viewFuncionarioModal" data-id="1">
                                 <i class="fa-solid fa-eye"></i>

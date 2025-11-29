@@ -120,39 +120,3 @@
 
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    function setupDateValidation(inicioId, fimId) {
-        const inicioInput = document.getElementById(inicioId);
-        const fimInput = document.getElementById(fimId);
-
-        if (inicioInput && fimInput) {
-            inicioInput.addEventListener('change', function() {
-                if (this.value) {
-                    fimInput.min = this.value;
-                    if (fimInput.value && new Date(fimInput.value) < new Date(this.value)) {
-                        fimInput.value = '';
-                    }
-                }
-            });
-
-            fimInput.addEventListener('change', function() {
-                if (this.value && inicioInput.value) {
-                    const inicioDate = new Date(inicioInput.value);
-                    const fimDate = new Date(this.value);
-
-                    if (fimDate < inicioDate) {
-                        alert('A data de fim não pode ser anterior à data de início.');
-                        this.value = '';
-                    }
-                }
-            });
-        }
-    }
-
-    setupDateValidation('inicioOcupacao', 'fimOcupacao');
-    setupDateValidation('inicioFinanceiro', 'fimFinanceiro');
-    setupDateValidation('inicioConsumos', 'fimConsumos');
-});
-</script>

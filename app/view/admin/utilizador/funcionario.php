@@ -11,11 +11,10 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Nome Completo</th>
                         <th scope="col">Cargo</th>
-                        <th scope="col">Nível de Acesso</th>
-                        <th scope="col">Estado</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefone</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -24,11 +23,13 @@
                     <tr>
                         <th scope="row">1</th>
                         <td>Adminstrador Principal</td>
-                        <td>admin@kenyel.com</td>
                         <td>Gerente</td>
-                        <td><span class="badge bg-danger">Administrador</span></td>
-                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>admin@kenyel.com</td>
+                        <td>+244 999 888 777</td>
                         <td>
+                            <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#viewFuncionarioModal" data-id="1">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
                             <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editFuncionarioModal" data-id="1">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </button>
@@ -54,7 +55,51 @@
             </div>
             <div class="modal-body">
                 <form id="addFuncionarioForm">
-                    <!-- Formulário para adicionar funcionário -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nomeCompleto" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeCompleto" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cargo" class="form-label">Cargo</label>
+                            <select class="form-select" id="cargo" required>
+                                <option value="">Selecione o cargo</option>
+                                <option value="Gerente">Gerente</option>
+                                <option value="Recepcionista">Recepcionista</option>
+                                <option value="Limpeza">Limpeza</option>
+                                <option value="Manutenção">Manutenção</option>
+                                <option value="Cozinheiro">Cozinheiro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="emailFuncionario" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailFuncionario" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="telefoneFuncionario" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" id="telefoneFuncionario" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-md-6 mb-3">
+                            <label for="genero" class="form-label">Género</label>
+                            <select class="form-select" id="genero" required>
+                                <option value="">Selecione o género</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="bilhete" class="form-label">Nº do Bilhete</label>
+                            <input type="text" class="form-control" id="bilhete" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="enderecoFuncionario" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="enderecoFuncionario" required>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -64,4 +109,4 @@
         </div>
     </div>
 </div>
-<!-- Outros modais para editar e apagar -->
+<!-- Outros modais (view, edit, delete) aqui -->

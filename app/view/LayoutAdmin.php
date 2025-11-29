@@ -25,10 +25,6 @@
                 <div class="info-header">
                     <div class="logo">
                         <h3><a href="<?= DIRPAGE; ?>" style="color: white; text-decoration: none;">Hotel Kenyel</a></h3>
-                        <!-- Botão para alternar a sidebar em mobile -->
-                        <button class="btn btn-link text-white d-md-none" id="sidebarToggle">
-                            <i class="fa-solid fa-bars"></i>
-                        </button>
                     </div>
                     <div class="icons-header">
                         <i class="fa-solid fa-magnifying-glass"></i>

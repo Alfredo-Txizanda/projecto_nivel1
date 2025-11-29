@@ -40,10 +40,49 @@
     </div>
 </div>
 
-<!-- Modais para Preços de Quarto -->
+<!-- Modal Adicionar Preço de Quarto -->
 <div class="modal fade" id="addPrecoQuartoModal" tabindex="-1" aria-labelledby="addPrecoQuartoModalLabel" aria-hidden="true">
-    <!-- Conteúdo do modal de adicionar preço de quarto -->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPrecoQuartoModalLabel">Adicionar Novo Preço de Quarto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addPrecoQuartoForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="tipoQuarto" class="form-label">Tipo de Quarto</label>
+                            <select class="form-select" id="tipoQuarto" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="Single">Single</option>
+                                <option value="Double">Double</option>
+                                <option value="Suite">Suite</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="temporada" class="form-label">Temporada</label>
+                            <select class="form-select" id="temporada" required>
+                                <option value="">Selecione a temporada</option>
+                                <option value="Baixa">Baixa Temporada</option>
+                                <option value="Alta">Alta Temporada</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="preco" class="form-label">Preço por Noite (AKZ)</label>
+                        <input type="number" class="form-control" id="preco" step="0.01" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" form="addPrecoQuartoForm" class="btn btn-primary">Guardar Preço</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 <div class="modal fade" id="editPrecoQuartoModal" tabindex="-1" aria-labelledby="editPrecoQuartoModalLabel" aria-hidden="true">
     <!-- Conteúdo do modal de editar preço de quarto -->
 </div>

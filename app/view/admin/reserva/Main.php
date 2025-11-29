@@ -13,40 +13,44 @@
         </button>
     </div>
 
-    <div class="tabela-dados">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Hóspede</th>
-                    <th scope="col">Quarto</th>
-                    <th scope="col">Check-in</th>
-                    <th scope="col">Check-out</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Exemplo de linha de dados -->
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Alfredo Txizanda</td>
-                    <td>Suite Presidencial</td>
-                    <td>2024-10-26</td>
-                    <td>2024-10-28</td>
-                    <td><span class="badge bg-success">Confirmada</span></td>
-                    <td>
-                        <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editReservaModal" data-id="1" data-hospede="Alfredo Txizanda" data-quarto="3" data-checkin="2024-10-26" data-checkout="2024-10-28" data-estado="Confirmada">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteReservaModal" data-id="1">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <!-- Fim do exemplo -->
-            </tbody>
-        </table>
+    <div class="card">
+        <div class="card-body">
+            <div class="tabela-dados">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Hóspede</th>
+                            <th scope="col">Quarto</th>
+                            <th scope="col">Check-in</th>
+                            <th scope="col">Check-out</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Exemplo de linha de dados -->
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Alfredo Txizanda</td>
+                            <td>Suite Presidencial</td>
+                            <td>2024-10-26</td>
+                            <td>2024-10-28</td>
+                            <td><span class="badge bg-success">Confirmada</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editReservaModal" data-id="1" data-hospede="Alfredo Txizanda" data-quarto="3" data-checkin="2024-10-26" data-checkout="2024-10-28" data-estado="Confirmada">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteReservaModal" data-id="1">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Fim do exemplo -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 

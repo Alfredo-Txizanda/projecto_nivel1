@@ -15,7 +15,7 @@
                         <th scope="col">Utilizador</th>
                         <th scope="col">Nível de Acesso</th>
                         <th scope="col">Estado</th>
-                        <th scope="col">Ações</th>
+                        <th scope="col">Acção</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -13,64 +13,68 @@
         </button>
     </div>
 
-    <div class="tabela-dados">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Tipo de Quarto</th>
-                    <th scope="col">Temporada</th>
-                    <th scope="col">Preço por Noite (AKZ)</th>
-                    <th scope="col">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Exemplo de linha de dados -->
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Standard</td>
-                    <td>Baixa Temporada</td>
-                    <td>150,00</td>
-                    <td>
-                        <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editPrecoModal" data-id="1">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deletePrecoModal" data-id="1">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Deluxe</td>
-                    <td>Baixa Temporada</td>
-                    <td>250,00</td>
-                    <td>
-                        <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editPrecoModal" data-id="2">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deletePrecoModal" data-id="2">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Suíte</td>
-                    <td>Alta Temporada</td>
-                    <td>500,00</td>
-                    <td>
-                        <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editPrecoModal" data-id="3">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deletePrecoModal" data-id="3">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <!-- Fim do exemplo -->
-            </tbody>
-        </table>
+    <div class="card">
+        <div class="card-body">
+            <div class="tabela-dados">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tipo de Quarto</th>
+                            <th scope="col">Temporada</th>
+                            <th scope="col">Preço por Noite (AKZ)</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Exemplo de linha de dados -->
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Standard</td>
+                            <td>Baixa Temporada</td>
+                            <td>150,00</td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editPrecoModal" data-id="1">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deletePrecoModal" data-id="1">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Deluxe</td>
+                            <td>Baixa Temporada</td>
+                            <td>250,00</td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editPrecoModal" data-id="2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deletePrecoModal" data-id="2">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Suíte</td>
+                            <td>Alta Temporada</td>
+                            <td>500,00</td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editPrecoModal" data-id="3">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deletePrecoModal" data-id="3">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Fim do exemplo -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 

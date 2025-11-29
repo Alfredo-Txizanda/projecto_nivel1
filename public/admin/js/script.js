@@ -11,12 +11,9 @@ $(document).ready(function() {
 
             checkinInput.attr('min', today);
             
-            // Se o check-in já tiver um valor (no caso de edição), define o min do checkout
-            if(checkinInput.val()){
-                checkoutInput.attr('min', checkinInput.val());
-            } else {
-                checkoutInput.attr('min', today);
-            }
+            // Define o 'min' do checkout com base no checkin existente ou hoje
+            const minCheckoutDate = checkinInput.val() && checkinInput.val() >= today ? checkinInput.val() : today;
+            checkoutInput.attr('min', minCheckoutDate);
 
             checkinInput.on('change', function() {
                 if (this.value) {
@@ -41,15 +38,44 @@ $(document).ready(function() {
         }
     }
 
-    // Evento para o modal de adicionar reserva
-    $('#addReservaModal').on('show.bs.modal', function () {
+    // --- DELEGAÇÃO DE EVENTOS para os Modais ---
+    // Isto garante que o código funciona mesmo com conteúdo carregado via AJAX.
+    $(document).on('show.bs.modal', '#addReservaModal', function () {
+        console.log('Add reserva modal opened');
         setupDateValidation('#checkin', '#checkout');
     });
 
-    // Evento para o modal de editar reserva
-    $('#editReservaModal').on('show.bs.modal', function () {
+    $(document).on('show.bs.modal', '#editReservaModal', function () {
+        console.log('Edit reserva modal opened');
+        // Preenche os dados do modal de edição (código movido para cá para garantir execução)
+        var button = event.relatedTarget;
+        var id = button.getAttribute('data-id');
+        var hospede = button.getAttribute('data-hospede');
+        var quarto = button.getAttribute('data-quarto');
+        var checkin = button.getAttribute('data-checkin');
+        var checkout = button.getAttribute('data-checkout');
+        var estado = button.getAttribute('data-estado');
+
+        var modal = $(this);
+        modal.find('.modal-title').text('Editar Reserva #' + id);
+        modal.find('#editReservaId').val(id);
+        modal.find('#editHospede').val(hospede);
+        modal.find('#editQuarto').val(quarto);
+        modal.find('#editCheckin').val(checkin);
+        modal.find('#editCheckout').val(checkout);
+        modal.find('#editEstado').val(estado);
+        
+        // Executa a validação DEPOIS de preencher os campos
         setupDateValidation('#editCheckin', '#editCheckout');
     });
+    
+    $(document).on('show.bs.modal', '#deleteReservaModal', function(event) {
+        var button = $(event.relatedTarget);
+        var id = button.data('id');
+        var modal = $(this);
+        modal.find('#deleteReservaId').val(id);
+    });
+
 
     // Get the initial dashboard content
     var initialContent = $('.content').html();
@@ -57,37 +83,26 @@ $(document).ready(function() {
     // Delegação de eventos para os links da sidebar
     $(document).on('click', '.sidebar-nav a', function(e) {
         e.preventDefault();
-        console.log("Sidebar link clicked.");
-
         var tab = $(this).data('tab');
-        console.log("Tab data attribute: " + tab);
-
-        // Update active class
         $('.sidebar-nav a').removeClass('active');
         $(this).addClass('active');
 
         if (tab === 'dashboard') {
-            console.log("Loading dashboard content.");
-            // Restore the initial content
             $('.content').html(initialContent);
             return;
         }
 
-        // Construct the URL for the AJAX request
         var url = '/projecto_nivel1/app/view/admin/' + tab + '/Main.php';
-        console.log("Requesting URL: " + url);
 
         $.ajax({
             url: url,
             type: 'GET',
             success: function(response) {
-                console.log("AJAX request successful.");
                 $('.content').html(response);
             },
-            error: function(xhr, status, error) {
-                console.error("AJAX Error: ", status, error);
-                console.error("Status: " + xhr.status + ", Response: " + xhr.responseText);
-                $('.content').html('<p class="alert alert-danger">Error ' + xhr.status + ': Could not load content. Please check the browser console for more details.</p>');
+            error: function(xhr) {
+                console.error("AJAX Error: ", xhr.status, xhr.responseText);
+                $('.content').html('<p class="alert alert-danger">Error ' + xhr.status + ': Could not load content.</p>');
             }
         });
     });

@@ -51,6 +51,22 @@ logo h3:hover {opacity: 0.7;}
     vertical-align: middle;
 }
 
+/* --- Cards com a mesma altura --- */
+.row.match-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.match-height > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.row.match-height .card {
+    flex-grow: 1;
+}
+
+
 /* --- Responsive Design --- */
 @media screen and (max-width: 768px) {
     header {

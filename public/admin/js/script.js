@@ -35,6 +35,45 @@ $(document).ready(function() {
             });
         }
     }
+    
+    // Função para configurar a validação de datas de relatório (com desativação)
+    function setupReportDateValidation(inicioSelector, fimSelector) {
+        const inicioInput = $(inicioSelector);
+        const fimInput = $(fimSelector);
+
+        if (inicioInput.length && fimInput.length) {
+            // 1. Desativa o campo de data de fim inicialmente
+            fimInput.prop('disabled', true);
+
+            // 2. Adiciona o listener para a data de início
+            $(document).on('change', inicioSelector, function() {
+                if (this.value) {
+                    // Ativa o campo de data de fim
+                    fimInput.prop('disabled', false);
+                    // Define a data mínima para a data de fim
+                    fimInput.attr('min', this.value);
+                    // Se a data de fim atual for inválida, limpa-a
+                    if (fimInput.val() && new Date(fimInput.val()) < new Date(this.value)) {
+                        fimInput.val('');
+                    }
+                } else {
+                    // Se a data de início for limpa, desativa e limpa a data de fim
+                    fimInput.val('');
+                    fimInput.prop('disabled', true);
+                }
+            });
+
+            // 3. Validação final na data de fim (como fallback)
+            $(document).on('change', fimSelector, function() {
+                if (this.value && inicioInput.val()) {
+                    if (new Date(this.value) < new Date(inicioInput.val())) {
+                        alert('A data de fim não pode ser anterior à data de início.');
+                        this.value = '';
+                    }
+                }
+            });
+        }
+    }
 
     // --- DELEGAÇÃO DE EVENTOS para os Modais de Reserva ---
     $(document).on('show.bs.modal', '#addReservaModal', function () {
@@ -69,34 +108,6 @@ $(document).ready(function() {
         modal.find('#deleteReservaId').val(id);
     });
 
-    // --- DELEGAÇÃO DE EVENTOS para os Relatórios ---
-    function setupReportDateValidation(inicioSelector, fimSelector) {
-        $(document).on('change', inicioSelector, function() {
-            const fimInput = $(fimSelector);
-            if (this.value) {
-                fimInput.attr('min', this.value);
-                if (fimInput.val() && new Date(fimInput.val()) < new Date(this.value)) {
-                    fimInput.val('');
-                }
-            }
-        });
-
-        $(document).on('change', fimSelector, function() {
-            const inicioInput = $(inicioSelector);
-            if (this.value && inicioInput.val()) {
-                if (new Date(this.value) < new Date(inicioInput.val())) {
-                    alert('A data de fim não pode ser anterior à data de início.');
-                    this.value = '';
-                }
-            }
-        });
-    }
-
-    setupReportDateValidation('#inicioOcupacao', '#fimOcupacao');
-    setupReportDateValidation('#inicioFinanceiro', '#fimFinanceiro');
-    setupReportDateValidation('#inicioConsumos', '#fimConsumos');
-
-
     // Get the initial dashboard content
     var initialContent = $('.content').html();
 
@@ -119,6 +130,13 @@ $(document).ready(function() {
             type: 'GET',
             success: function(response) {
                 $('.content').html(response);
+                
+                // Se a aba de relatórios for carregada, inicializa a validação das datas
+                if (tab === 'relatorio') {
+                    setupReportDateValidation('#inicioOcupacao', '#fimOcupacao');
+                    setupReportDateValidation('#inicioFinanceiro', '#fimFinanceiro');
+                    setupReportDateValidation('#inicioConsumos', '#fimConsumos');
+                }
             },
             error: function(xhr) {
                 console.error("AJAX Error: ", xhr.status, xhr.responseText);

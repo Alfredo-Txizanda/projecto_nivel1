@@ -31,7 +31,6 @@
                             <button type="submit" name="formato" value="pdf" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> PDF</button>
                             <button type="submit" name="formato" value="excel" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Excel</button>
                             <button type="submit" name="formato" value="csv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</button>
-                            <button type="submit" name="formato" value="word" class="btn btn-primary"><i class="fa-solid fa-file-word"></i> Word</button>
                         </div>
                     </form>
                 </div>
@@ -61,7 +60,6 @@
                             <button type="submit" name="formato" value="pdf" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> PDF</button>
                             <button type="submit" name="formato" value="excel" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Excel</button>
                             <button type="submit" name="formato" value="csv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</button>
-                            <button type="submit" name="formato" value="word" class="btn btn-primary"><i class="fa-solid fa-file-word"></i> Word</button>
                         </div>
                     </form>
                 </div>
@@ -81,7 +79,6 @@
                             <button type="submit" name="formato" value="pdf" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> PDF</button>
                             <button type="submit" name="formato" value="excel" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Excel</button>
                             <button type="submit" name="formato" value="csv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</button>
-                            <button type="submit" name="formato" value="word" class="btn btn-primary"><i class="fa-solid fa-file-word"></i> Word</button>
                         </div>
                     </form>
                 </div>
@@ -100,18 +97,17 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="inicioConsumos" class="form-label">Data de Início</label>
-                                <input type="date" class="form-control" id="inicioConsumos" required>
+                                <input type="text" class="form-control" id="inicioConsumos" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="fimConsumos" class="form-label">Data de Fim</label>
-                                <input type="date" class="form-control" id="fimConsumos" required disabled>
+                                <input type="text" class="form-control" id="fimConsumos" required disabled>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start gap-2 mt-3">
                             <button type="submit" name="formato" value="pdf" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> PDF</button>
                             <button type="submit" name="formato" value="excel" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Excel</button>
                             <button type="submit" name="formato" value="csv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</button>
-                            <button type="submit" name="formato" value="word" class="btn btn-primary"><i class="fa-solid fa-file-word"></i> Word</button>
                         </div>
                     </form>
                 </div>

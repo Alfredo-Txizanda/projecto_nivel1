@@ -7,7 +7,7 @@
         <p><i class="fa-solid fa-chart-line"></i> / Dashboard Kenyel / Relatórios</p>
     </div>
 
-    <div class="row mt-4">
+    <div class="row mt-4 match-height">
         <!-- Card: Relatório de Ocupação -->
         <div class="col-md-6 mb-4">
             <div class="card">
@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="fimOcupacao" class="form-label">Data de Fim</label>
-                                <input type="date" class="form-control" id="fimOcupacao" required>
+                                <input type="date" class="form-control" id="fimOcupacao" required disabled>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start gap-2 mt-3">
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="fimFinanceiro" class="form-label">Data de Fim</label>
-                                <input type="date" class="form-control" id="fimFinanceiro" required>
+                                <input type="date" class="form-control" id="fimFinanceiro" required disabled>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start gap-2 mt-3">
@@ -104,7 +104,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="fimConsumos" class="form-label">Data de Fim</label>
-                                <input type="date" class="form-control" id="fimConsumos" required>
+                                <input type="date" class="form-control" id="fimConsumos" required disabled>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start gap-2 mt-3">

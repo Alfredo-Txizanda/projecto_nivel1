@@ -186,7 +186,66 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    // Modal de Edição
+    // --- Lógica para o Modal de Adicionar Reserva ---
+    const checkinInput = document.getElementById('checkin');
+    const checkoutInput = document.getElementById('checkout');
+
+    const today = new Date().toISOString().split('T')[0];
+    checkinInput.setAttribute('min', today);
+    checkoutInput.setAttribute('min', today);
+
+    checkinInput.addEventListener('change', function() {
+        if (this.value) {
+            checkoutInput.setAttribute('min', this.value);
+            // Se a data de checkout for anterior à nova data de checkin, limpa o campo
+            if (checkoutInput.value && new Date(checkoutInput.value) < new Date(this.value)) {
+                checkoutInput.value = '';
+            }
+        }
+    });
+
+    checkoutInput.addEventListener('change', function() {
+        if (this.value && checkinInput.value) {
+            const checkInDate = new Date(checkinInput.value);
+            const checkOutDate = new Date(this.value);
+
+            if (checkOutDate <= checkInDate) {
+                alert('A data de Check-out deve ser posterior à data de Check-in.');
+                this.value = '';
+            }
+        }
+    });
+
+    // --- Lógica para o Modal de Editar Reserva ---
+    const editCheckinInput = document.getElementById('editCheckin');
+    const editCheckoutInput = document.getElementById('editCheckout');
+
+    editCheckinInput.setAttribute('min', today);
+    editCheckoutInput.setAttribute('min', today);
+
+    editCheckinInput.addEventListener('change', function() {
+        if (this.value) {
+            editCheckoutInput.setAttribute('min', this.value);
+            if (editCheckoutInput.value && new Date(editCheckoutInput.value) < new Date(this.value)) {
+                editCheckoutInput.value = '';
+            }
+        }
+    });
+
+    editCheckoutInput.addEventListener('change', function() {
+        if (this.value && editCheckinInput.value) {
+            const checkInDate = new Date(editCheckinInput.value);
+            const checkOutDate = new Date(this.value);
+
+            if (checkOutDate <= checkInDate) {
+                alert('A data de Check-out deve ser posterior à data de Check-in.');
+                this.value = '';
+            }
+        }
+    });
+
+
+    // --- Lógica para preencher os modais (existente) ---
     var editModal = document.getElementById('editReservaModal');
     editModal.addEventListener('show.bs.modal', function (event) {
         var button = event.relatedTarget;
@@ -212,9 +271,11 @@ document.addEventListener('DOMContentLoaded', function () {
         checkinInput.value = checkin;
         checkoutInput.value = checkout;
         estadoInput.value = estado;
+        
+        // Garante que o 'min' do checkout de edição é atualizado ao abrir o modal
+        editCheckoutInput.setAttribute('min', checkin);
     });
 
-    // Modal de Exclusão
     var deleteModal = document.getElementById('deleteReservaModal');
     deleteModal.addEventListener('show.bs.modal', function (event) {
         var button = event.relatedTarget;

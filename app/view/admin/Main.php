@@ -6,15 +6,15 @@
         </div>
         <nav class="sidebar-nav">
             <ul>
-                <li><a href="#" data-tab="dashboard" class="active">Dashboard</a></li>
-                <li><a href="#" data-tab="reserva">Reservas</a></li>
-                <li><a href="#" data-tab="quarto">Quartos</a></li>
-                <li><a href="#" data-tab="preco">Preços</a></li>
-                <li><a href="#" data-tab="consumo">Consumos</a></li>
-                <li><a href="#" data-tab="empresa">Empresa</a></li>
-                <li><a href="#" data-tab="utilizador">Utilizadores</a></li>
-                <li><a href="#" data-tab="servico">Serviços</a></li>
-                <li><a href="#" data-tab="relatorio">Relatórios</a></li>
+                <li><a href="#" data-tab="dashboard" class="active"><i class="fa-solid fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#" data-tab="reserva"><i class="fa-solid fa-calendar-check"></i> Reservas</a></li>
+                <li><a href="#" data-tab="quarto"><i class="fa-solid fa-bed"></i> Quartos</a></li>
+                <li><a href="#" data-tab="preco"><i class="fa-solid fa-dollar-sign"></i> Preços</a></li>
+                <li><a href="#" data-tab="consumo"><i class="fa-solid fa-utensils"></i> Consumos</a></li>
+                <li><a href="#" data-tab="empresa"><i class="fa-solid fa-building"></i> Empresa</a></li>
+                <li><a href="#" data-tab="utilizador"><i class="fa-solid fa-users"></i> Utilizadores</a></li>
+                <li><a href="#" data-tab="servico"><i class="fa-solid fa-concierge-bell"></i> Serviços</a></li>
+                <li><a href="#" data-tab="relatorio"><i class="fa-solid fa-chart-bar"></i> Relatórios</a></li>
 
             </ul>
         </nav>

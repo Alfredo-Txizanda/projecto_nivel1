@@ -24,6 +24,7 @@
                             <th scope="col">NIF</th>
                             <th scope="col">Telefone</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Endereço</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
@@ -35,6 +36,7 @@
                             <td>123456789</td>
                             <td>+244 999 999 999</td>
                             <td>geral@kenyelhotel.co.ao</td>
+                            <td>Luanda, Angola</td>
                             <td>
                                 <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editEmpresaModal" data-id="1">
                                     <i class="fa-solid fa-pen-to-square"></i>

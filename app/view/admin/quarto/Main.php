@@ -13,38 +13,42 @@
         </button>
     </div>
 
-    <div class="tabela-dados">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Número</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Preço (AKZ)</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Exemplo de linha de dados -->
-                <tr>
-                    <th scope="row">1</th>
-                    <td>101</td>
-                    <td>Single</td>
-                    <td>25.000,00</td>
-                    <td><span class="badge bg-success">Disponível</span></td>
-                    <td>
-                        <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editQuartoModal" data-id="1">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteQuartoModal" data-id="1">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <!-- Fim do exemplo -->
-            </tbody>
-        </table>
+    <div class="card">
+        <div class="card-body">
+            <div class="tabela-dados">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Número</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Preço (AKZ)</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Exemplo de linha de dados -->
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>101</td>
+                            <td>Single</td>
+                            <td>25.000,00</td>
+                            <td><span class="badge bg-success">Disponível</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editQuartoModal" data-id="1">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteQuartoModal" data-id="1">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Fim do exemplo -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 

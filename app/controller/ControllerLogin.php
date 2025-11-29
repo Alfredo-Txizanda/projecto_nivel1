@@ -14,22 +14,21 @@
                 session_start();
             }*/
 
-            $this->setTitulo("login");
+            $this->setTitulo("Login");
             $this->setDescricao("Página de acesso | Login.");
             $this->setPalavraChave("Login, Entrada, Acesso");
-            //$this->setPasta("admin/login");
             $this->setPasta("login");
         }
 
-        // Página principal do dashboard
+        // Página principal do login
         public function index()
         {
             $this->renderLayout();
         }
 
-        #RESPONSÁVEL POR RENDERIZAR O LAYOUT ESPECÍFICO DO ADMIN
+        #RESPONSÁVEL POR RENDERIZAR O LAYOUT PÚBLICO
         public function renderLayout()
         {
-            include_once(DIRREQ . "app/view/LayoutAdmin.php");
+            include_once(DIRREQ . "app/view/Layout.php");
         }
     }

@@ -37,33 +37,33 @@
             <div style="background: linear-gradient(45deg, #ff5370, #ff869a);" class="box-info-single">
                 <div class="info-text">
                     <h3>Reservas</h3>
-                    <p>Número</p>
+                    <p>Total de Reservas</p>
                 </div>
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-calendar-check"></i>
             </div>
 
             <div style="background: linear-gradient(45deg, #4099ff, #73b4ff);" class="box-info-single">
                 <div class="info-text">
                     <h3>Quartos</h3>
-                    <p>Número</p>
+                    <p>Quartos Disponíveis</p>
                 </div>
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-bed"></i>
             </div>
 
             <div style="background: linear-gradient(45deg, #ffb64d, #ffcb80);" class="box-info-single">
                 <div class="info-text">
                     <h3>Check-In</h3>
-                    <p>Número</p>
+                    <p>Check-ins Hoje</p>
                 </div>
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-sign-in-alt"></i>
             </div>
 
             <div style="background: linear-gradient(45deg, #2ed8b6, #59e0c5);" class="box-info-single">
                 <div class="info-text">
                     <h3>Check-out</h3>
-                    <p>Número</p>
+                    <p>Check-outs Hoje</p>
                 </div>
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-sign-out-alt"></i>
             </div>
         </div>
 

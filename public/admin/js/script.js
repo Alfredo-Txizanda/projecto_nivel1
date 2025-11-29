@@ -1,17 +1,15 @@
 $(document).ready(function() {
     console.log("Document is ready. script.js loaded.");
 
-    // Função para configurar a validação de datas
+    // Função para configurar a validação de datas de reserva
     function setupDateValidation(checkinSelector, checkoutSelector) {
         const checkinInput = $(checkinSelector);
         const checkoutInput = $(checkoutSelector);
 
         if (checkinInput.length && checkoutInput.length) {
             const today = new Date().toISOString().split('T')[0];
-
             checkinInput.attr('min', today);
             
-            // Define o 'min' do checkout com base no checkin existente ou hoje
             const minCheckoutDate = checkinInput.val() && checkinInput.val() >= today ? checkinInput.val() : today;
             checkoutInput.attr('min', minCheckoutDate);
 
@@ -37,17 +35,42 @@ $(document).ready(function() {
             });
         }
     }
+    
+    // Função para configurar a validação de datas de relatório
+    function setupReportDateValidation(inicioId, fimId) {
+        const inicioInput = document.getElementById(inicioId);
+        const fimInput = document.getElementById(fimId);
+
+        if (inicioInput && fimInput) {
+            inicioInput.addEventListener('change', function() {
+                if (this.value) {
+                    fimInput.min = this.value;
+                    if (fimInput.value && new Date(fimInput.value) < new Date(this.value)) {
+                        fimInput.value = '';
+                    }
+                }
+            });
+
+            fimInput.addEventListener('change', function() {
+                if (this.value && inicioInput.value) {
+                    const inicioDate = new Date(inicioInput.value);
+                    const fimDate = new Date(this.value);
+
+                    if (fimDate < inicioDate) {
+                        alert('A data de fim não pode ser anterior à data de início.');
+                        this.value = '';
+                    }
+                }
+            });
+        }
+    }
 
     // --- DELEGAÇÃO DE EVENTOS para os Modais ---
-    // Isto garante que o código funciona mesmo com conteúdo carregado via AJAX.
     $(document).on('show.bs.modal', '#addReservaModal', function () {
-        console.log('Add reserva modal opened');
         setupDateValidation('#checkin', '#checkout');
     });
 
-    $(document).on('show.bs.modal', '#editReservaModal', function () {
-        console.log('Edit reserva modal opened');
-        // Preenche os dados do modal de edição (código movido para cá para garantir execução)
+    $(document).on('show.bs.modal', '#editReservaModal', function (event) {
         var button = event.relatedTarget;
         var id = button.getAttribute('data-id');
         var hospede = button.getAttribute('data-hospede');
@@ -65,7 +88,6 @@ $(document).ready(function() {
         modal.find('#editCheckout').val(checkout);
         modal.find('#editEstado').val(estado);
         
-        // Executa a validação DEPOIS de preencher os campos
         setupDateValidation('#editCheckin', '#editCheckout');
     });
     
@@ -99,6 +121,13 @@ $(document).ready(function() {
             type: 'GET',
             success: function(response) {
                 $('.content').html(response);
+                
+                // Se a aba de relatórios for carregada, inicializa a validação das datas
+                if (tab === 'relatorio') {
+                    setupReportDateValidation('inicioOcupacao', 'fimOcupacao');
+                    setupReportDateValidation('inicioFinanceiro', 'fimFinanceiro');
+                    setupReportDateValidation('inicioConsumos', 'fimConsumos');
+                }
             },
             error: function(xhr) {
                 console.error("AJAX Error: ", xhr.status, xhr.responseText);

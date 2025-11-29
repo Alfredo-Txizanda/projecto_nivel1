@@ -1,8 +1,8 @@
 $(document).ready(function() {
     console.log("Document is ready. script.js loaded.");
 
-    // Função para configurar a validação de datas de reserva
-    function setupDateValidation(checkinSelector, checkoutSelector) {
+    // Função para configurar a validação de datas de reserva (bloqueia datas passadas)
+    function setupReservationDateValidation(checkinSelector, checkoutSelector) {
         const checkinInput = $(checkinSelector);
         const checkoutInput = $(checkoutSelector);
 
@@ -35,39 +35,10 @@ $(document).ready(function() {
             });
         }
     }
-    
-    // Função para configurar a validação de datas de relatório
-    function setupReportDateValidation(inicioId, fimId) {
-        const inicioInput = document.getElementById(inicioId);
-        const fimInput = document.getElementById(fimId);
 
-        if (inicioInput && fimInput) {
-            inicioInput.addEventListener('change', function() {
-                if (this.value) {
-                    fimInput.min = this.value;
-                    if (fimInput.value && new Date(fimInput.value) < new Date(this.value)) {
-                        fimInput.value = '';
-                    }
-                }
-            });
-
-            fimInput.addEventListener('change', function() {
-                if (this.value && inicioInput.value) {
-                    const inicioDate = new Date(inicioInput.value);
-                    const fimDate = new Date(this.value);
-
-                    if (fimDate < inicioDate) {
-                        alert('A data de fim não pode ser anterior à data de início.');
-                        this.value = '';
-                    }
-                }
-            });
-        }
-    }
-
-    // --- DELEGAÇÃO DE EVENTOS para os Modais ---
+    // --- DELEGAÇÃO DE EVENTOS para os Modais de Reserva ---
     $(document).on('show.bs.modal', '#addReservaModal', function () {
-        setupDateValidation('#checkin', '#checkout');
+        setupReservationDateValidation('#checkin', '#checkout');
     });
 
     $(document).on('show.bs.modal', '#editReservaModal', function (event) {
@@ -88,7 +59,7 @@ $(document).ready(function() {
         modal.find('#editCheckout').val(checkout);
         modal.find('#editEstado').val(estado);
         
-        setupDateValidation('#editCheckin', '#editCheckout');
+        setupReservationDateValidation('#editCheckin', '#editCheckout');
     });
     
     $(document).on('show.bs.modal', '#deleteReservaModal', function(event) {
@@ -97,6 +68,33 @@ $(document).ready(function() {
         var modal = $(this);
         modal.find('#deleteReservaId').val(id);
     });
+
+    // --- DELEGAÇÃO DE EVENTOS para os Relatórios ---
+    function setupReportDateValidation(inicioSelector, fimSelector) {
+        $(document).on('change', inicioSelector, function() {
+            const fimInput = $(fimSelector);
+            if (this.value) {
+                fimInput.attr('min', this.value);
+                if (fimInput.val() && new Date(fimInput.val()) < new Date(this.value)) {
+                    fimInput.val('');
+                }
+            }
+        });
+
+        $(document).on('change', fimSelector, function() {
+            const inicioInput = $(inicioSelector);
+            if (this.value && inicioInput.val()) {
+                if (new Date(this.value) < new Date(inicioInput.val())) {
+                    alert('A data de fim não pode ser anterior à data de início.');
+                    this.value = '';
+                }
+            }
+        });
+    }
+
+    setupReportDateValidation('#inicioOcupacao', '#fimOcupacao');
+    setupReportDateValidation('#inicioFinanceiro', '#fimFinanceiro');
+    setupReportDateValidation('#inicioConsumos', '#fimConsumos');
 
 
     // Get the initial dashboard content
@@ -121,13 +119,6 @@ $(document).ready(function() {
             type: 'GET',
             success: function(response) {
                 $('.content').html(response);
-                
-                // Se a aba de relatórios for carregada, inicializa a validação das datas
-                if (tab === 'relatorio') {
-                    setupReportDateValidation('inicioOcupacao', 'fimOcupacao');
-                    setupReportDateValidation('inicioFinanceiro', 'fimFinanceiro');
-                    setupReportDateValidation('inicioConsumos', 'fimConsumos');
-                }
             },
             error: function(xhr) {
                 console.error("AJAX Error: ", xhr.status, xhr.responseText);

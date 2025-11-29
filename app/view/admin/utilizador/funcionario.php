@@ -16,7 +16,7 @@
                         <th scope="col">Email</th>
                         <th scope="col">Telefone</th>
                         <th scope="col">Nº do Bilhete</th>
-                        <th scope="col">Ação</th>
+                        <th scope="col">Acção</th>
                     </tr>
                 </thead>
                 <tbody>

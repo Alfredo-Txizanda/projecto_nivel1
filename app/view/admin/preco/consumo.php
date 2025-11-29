@@ -38,10 +38,34 @@
     </div>
 </div>
 
-<!-- Modais para Preços de Consumo -->
+<!-- Modal Adicionar Preço de Consumo -->
 <div class="modal fade" id="addPrecoConsumoModal" tabindex="-1" aria-labelledby="addPrecoConsumoModalLabel" aria-hidden="true">
-    <!-- Conteúdo do modal de adicionar preço de consumo -->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPrecoConsumoModalLabel">Adicionar Novo Preço de Consumo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addPrecoConsumoForm">
+                    <div class="mb-3">
+                        <label for="item" class="form-label">Nome do Item</label>
+                        <input type="text" class="form-control" id="item" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="precoConsumo" class="form-label">Preço (AKZ)</label>
+                        <input type="number" class="form-control" id="precoConsumo" step="0.01" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" form="addPrecoConsumoForm" class="btn btn-primary">Guardar Preço</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 <div class="modal fade" id="editPrecoConsumoModal" tabindex="-1" aria-labelledby="editPrecoConsumoModalLabel" aria-hidden="true">
     <!-- Conteúdo do modal de editar preço de consumo -->
 </div>

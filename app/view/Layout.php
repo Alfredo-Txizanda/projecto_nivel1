@@ -29,8 +29,8 @@
                         <li class="nav-item"><a class="nav-link" href="<?= DIRPAGE . 'quarto'; ?>">Quartos</a></li>
                         <li class="nav-item"> <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reservaModal">Reserva</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= DIRPAGE . 'galeria'; ?>">Galeria</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?= DIRPAGE . 'admin/login'; ?>">Login</a></li>
                         <li class="nav-item"> <a class="nav-link" href="<?= DIRPAGE . 'sobre'; ?>">Sobre Nós</a></li>
+
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

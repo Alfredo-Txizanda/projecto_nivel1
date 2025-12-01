@@ -5,7 +5,7 @@
     use src\classes\Render;
     use src\interfaces\InterfaceView;
 
-    class ControllerHome extends Render implements InterfaceView  {
+    class ControllerSobre extends Render implements InterfaceView  {
         public function __construct()
         {
             $this->setTitulo("Página Inicial");

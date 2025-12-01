@@ -3,6 +3,7 @@
     namespace app\controller;
 
     use src\classes\Render;
+    use src\interfaces\InterfaceView;
 
     class Controller404 {
         public function __construct ()

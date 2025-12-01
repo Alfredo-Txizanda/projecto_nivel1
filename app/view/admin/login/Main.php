@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="login-container">
-        <form class="login-form" action="/admin/login" method="post">
+        <form class="login-form" action="" method="post">
             <h2>Admin Login</h2>
             <div class="input-group">
                 <label for="username">Username</label>

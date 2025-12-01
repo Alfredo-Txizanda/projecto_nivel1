@@ -22,6 +22,7 @@
               "detalhe" => "ControllerDetalhe",
               "admin"   => "ControllerAdmin",
               "login"   => "ControllerLogin",
+              "galeria" => "ControllerGaleria",
               "sobre"   => "ControllerSobre",
             );
 

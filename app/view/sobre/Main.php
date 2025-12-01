@@ -1,1 +1,1 @@
-<?php
+<h2>Trabalho de conclusão de Curso | Sobre</h2>

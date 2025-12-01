@@ -17,8 +17,3 @@
             $this->renderLayout();
         }
     }
-
-    public function index()
-    {
-        $this->renderLayout();
-    }

@@ -2,14 +2,22 @@
 
     namespace app\controller;
 
-    class ControllerSobre {
-        public function testeMetodo ($par1, $par2, $par3)
+    use src\classes\Render;
+    use src\interfaces\InterfaceView;
+
+    class ControllerHome extends Render implements InterfaceView  {
+        public function __construct()
         {
-            echo "Parametro 1 é <strong>{$par1}</strong>, Parametro 2 é <strong>{$par2}</strong>, Parametro 3 é <strong>{$par3}</strong>";
+            $this->setTitulo("Página Inicial");
+            $this->setDescricao("Projecto de defesa final de curso | TCC");
+            $this->setPalavraChave("TCC, tcc, Projecto Final, Hotel, Conclusão de curso, Projecto, Final, Alfredo, Txizanda");
+            $this->setPasta("home");
+            //$this->renderLayout();
         }
 
-        public function testeDois ()
+        public function index()
         {
-            echo "Teste Dois";
+            $this->renderLayout();
         }
+
     }

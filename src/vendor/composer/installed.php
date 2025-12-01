@@ -3,7 +3,7 @@
         'name' => 'tcc/2025',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '5256fbf3645619ee89a7baa4f05a5ad8c05fe456',
+        'reference' => 'b803b8eed4208b7808b762a8975e10b9d08810b1',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'phpmailer/phpmailer' => array(
-            'pretty_version' => 'v6.10.0',
-            'version' => '6.10.0.0',
-            'reference' => 'bf74d75a1fde6beaa34a0ddae2ec5fce0f72a144',
+            'pretty_version' => 'v6.12.0',
+            'version' => '6.12.0.0',
+            'reference' => 'd1ac35d784bf9f5e61b424901d5a014967f15b12',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpmailer/phpmailer',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'tcc/2025' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '5256fbf3645619ee89a7baa4f05a5ad8c05fe456',
+            'reference' => 'b803b8eed4208b7808b762a8975e10b9d08810b1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

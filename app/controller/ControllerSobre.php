@@ -8,10 +8,10 @@
     class ControllerSobre extends Render implements InterfaceView  {
         public function __construct()
         {
-            $this->setTitulo("Página Inicial");
+            $this->setTitulo("Sobre Nós");
             $this->setDescricao("Projecto de defesa final de curso | TCC");
-            $this->setPalavraChave("TCC, tcc, Projecto Final, Hotel, Conclusão de curso, Projecto, Final, Alfredo, Txizanda");
-            $this->setPasta("home");
+            $this->setPalavraChave("Sobre Nós, sobre, sobre o projecto, Sobre o Hotel, Alfredo, Txizanda");
+            $this->setPasta("sobre");
             //$this->renderLayout();
         }
 

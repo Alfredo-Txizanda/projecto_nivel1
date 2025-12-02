@@ -26,6 +26,12 @@
             $this->renderLayout();
         }
 
+        public function login()
+        {
+            $this->setPasta("admin");
+            include_once(DIRREQ . "app/view/{$this->getPasta()}/login/Main.php");
+        }
+
         public function reserva()
         {
             $this->setPasta("admin");

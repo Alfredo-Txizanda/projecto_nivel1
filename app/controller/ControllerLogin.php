@@ -29,6 +29,7 @@
         #RESPONSÁVEL POR RENDERIZAR O LAYOUT PÚBLICO
         public function renderLayout()
         {
-            include_once(DIRREQ . "app/view/Layout.php");
+            //include_once(DIRREQ . "app/view/Layout.php");
+            include_once(DIRREQ . "app/view/LayoutAdmin.php");
         }
     }

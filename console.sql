@@ -382,8 +382,7 @@ BEGIN
     IF NEW.id_reserva IS NOT NULL THEN
         UPDATE reserva SET estado = 'CHECKIN' WHERE id_reserva = NEW.id_reserva;
     END IF;
-END//
-DELIMITER ;
+END//DELIMITER ;
 
 -- Trigger para atualizar valores da fatura
 DELIMITER //

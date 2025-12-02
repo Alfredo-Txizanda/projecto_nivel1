@@ -51,6 +51,7 @@
         #RESPONSÁVEL POR RENDERIZAR O LAYOUT ESPECÍFICO DO ADMIN
         public function renderLayout()
         {
-            include_once(DIRREQ . "app/view/admin/login");
+            include_once(DIRREQ . "app/view/LayoutAdmin.php");
+            //include_once(DIRREQ . "app/view/admin/login/Main.php");
         }
     }

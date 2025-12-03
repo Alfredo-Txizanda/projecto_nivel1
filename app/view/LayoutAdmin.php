@@ -15,24 +15,19 @@
     <link rel="stylesheet" href="<?= DIRCSSADMIN . 'fontawesome.min.css'; ?>">
 
     <style>
-        .login-page {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?= DIRIMG . 'hotel-cover.jpg'; ?>');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
         .login-container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            background-color: #f8f9fa;
         }
     </style>
 
     <?= $this->addHead(); ?>
 </head>
-<body class="<?= ($this->getPasta() === 'admin/login') ? 'login-page' : '' ?>">
-    <div class="container-fluid p-0">
+<body>
+    <div class="container-fluid">
         <?php if ($this->getPasta() !== 'admin/login'): ?>
             <div class="cabecalho-admin">
                 <?php echo $this->addHeader(); ?>

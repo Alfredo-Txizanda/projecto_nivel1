@@ -14,20 +14,14 @@
     <link rel="stylesheet" href="<?= DIRCSSADMIN . 'all.min.css'; ?>">
     <link rel="stylesheet" href="<?= DIRCSSADMIN . 'fontawesome.min.css'; ?>">
 
-    <style>
-        .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f8f9fa;
-        }
-    </style>
+    <?php if ($this->getPasta() === 'admin/login'): ?>
+        <link rel="stylesheet" href="<?= DIRCSSADMIN . 'login.css'; ?>">
+    <?php endif; ?>
 
     <?= $this->addHead(); ?>
 </head>
-<body>
-    <div class="container-fluid">
+<body class="<?= ($this->getPasta() === 'admin/login') ? 'login-page' : '' ?>">
+    <div class="container-fluid p-0">
         <?php if ($this->getPasta() !== 'admin/login'): ?>
             <div class="cabecalho-admin">
                 <?php echo $this->addHeader(); ?>

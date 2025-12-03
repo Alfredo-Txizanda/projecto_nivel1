@@ -26,7 +26,7 @@
             $this->renderLayout();
         }
 
-        public function login()
+        /*public function login()
         {
             $this->setPasta("admin");
             include_once(DIRREQ . "app/view/{$this->getPasta()}/login/Main.php");
@@ -46,7 +46,7 @@
         public function quarto() {
             $this->setPasta("admin");
             include_once(DIRREQ . "app/view/{$this->getPasta()}/quarto/Main.php");
-        }
+        }*/
 
         #RESPONSÁVEL POR RENDERIZAR O LAYOUT ESPECÍFICO DO ADMIN
         public function renderLayout()

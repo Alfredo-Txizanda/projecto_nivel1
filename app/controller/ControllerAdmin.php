@@ -24,11 +24,13 @@ class ControllerAdmin extends Render implements InterfaceView
     public function index()
     {
         // Verifica se o utilizador está autenticado
-        if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {
+        /*if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {
             // Se não estiver, redireciona para a página de login
             header('Location: ' . DIRPAGE . 'admin/login');
-            exit();
-        }
+            exit();*/
+
+            header('Location: ' . DIRPAGE . 'admin/login');
+        //}
 
         // Se estiver autenticado, renderiza o painel
         $this->renderLayout();

@@ -14,38 +14,52 @@
     <link rel="stylesheet" href="<?= DIRCSSADMIN . 'all.min.css'; ?>">
     <link rel="stylesheet" href="<?= DIRCSSADMIN . 'fontawesome.min.css'; ?>">
 
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+    </style>
+
     <?= $this->addHead(); ?>
 </head>
 <body>
     <div class="container-fluid">
-        <div class="cabecalho-admin">
-            <?php echo $this->addHeader(); ?>
-            <!-- INÍCIO HEADER -->
-            <header class="header">
-                <div class="info-header">
-                    <div class="logo">
-                        <h3><a href="<?= DIRPAGE; ?>" style="color: white; text-decoration: none;">Hotel Kenyel</a></h3>
+        <?php if ($this->getPasta() !== 'admin/login'): ?>
+            <div class="cabecalho-admin">
+                <?php echo $this->addHeader(); ?>
+                <!-- INÍCIO HEADER -->
+                <header class="header">
+                    <div class="info-header">
+                        <div class="logo">
+                            <h3><a href="<?= DIRPAGE; ?>" style="color: white; text-decoration: none;">Hotel Kenyel</a></h3>
+                        </div>
+                        <div class="icons-header">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
                     </div>
-                    <div class="icons-header">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                    <div style="align-items: center;" class="info-header">
+                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-bell"></i>
+                        <img src="<?= DIRIMG . 'perfil.jpg'; ?>" alt="Imagem de perfil">
                     </div>
-                </div>
-                <div style="align-items: center;" class="info-header">
-                    <i class="fa-solid fa-envelope"></i>
-                    <i class="fa-solid fa-bell"></i>
-                    <img src="<?= DIRIMG . 'perfil.jpg'; ?>" alt="Imagem de perfil">
-                </div>
-            </header>
-            <!-- FIM HEADER -->
-        </div>
+                </header>
+                <!-- FIM HEADER -->
+            </div>
+        <?php endif; ?>
 
-        <div class="corpo-admin">
+        <div class="corpo-admin <?= ($this->getPasta() === 'admin/login') ? 'login-container' : '' ?>">
             <?php echo $this->addMain(); ?>
         </div>
 
-        <div class="rodape-admin">
-            <?php echo $this->addFooter(); ?>
-        </div>
+        <?php if ($this->getPasta() !== 'admin/login'): ?>
+            <div class="rodape-admin">
+                <?php echo $this->addFooter(); ?>
+            </div>
+        <?php endif; ?>
 
         <script src="<?php echo DIRJSADMIN . 'jquery.min.js'; ?>"></script>
         <script src="<?php echo DIRJSADMIN . 'bootstrap.bundle.min.js'; ?>"></script>

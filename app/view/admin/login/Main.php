@@ -1,4 +1,4 @@
-<div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+<div class="card shadow-lg login" style="width: 100%; max-width: 400px;">
     <div class="card-body p-5">
         <h3 class="card-title text-center mb-4">Login Administrativo</h3>
         <form action="" method="post">

@@ -1,6 +1,14 @@
 <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
     <div class="card-body p-5">
         <h3 class="card-title text-center mb-4">Login Administrativo</h3>
+
+        <?php if (isset($_SESSION['login_error'])): ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION['login_error']; ?>
+            </div>
+            <?php unset($_SESSION['login_error']); // Limpa a mensagem após exibir ?>
+        <?php endif; ?>
+
         <form id="loginForm" action="<?= DIRPAGE . 'admin/login'; ?>" method="post">
             <div class="mb-3">
                 <label for="username" class="form-label">Utilizador</label>

@@ -24,13 +24,11 @@ class ControllerAdmin extends Render implements InterfaceView
     public function index()
     {
         // Verifica se o utilizador está autenticado
-        /*if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {
+        if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {
             // Se não estiver, redireciona para a página de login
             header('Location: ' . DIRPAGE . 'admin/login');
-            exit();*/
-
-            header('Location: ' . DIRPAGE . 'admin/login');
-        //}
+            exit();
+        }
 
         // Se estiver autenticado, renderiza o painel
         $this->renderLayout();
@@ -38,18 +36,33 @@ class ControllerAdmin extends Render implements InterfaceView
 
     public function login()
     {
-        // Lógica para a página de login (ex: processar o formulário)
-        // Por agora, apenas renderiza a view de login
-        $this->setPasta("admin/login");
-        $this->renderLayout(); // O ideal é ter um layout específico para login
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
+
+            // Simulação de autenticação
+            // Em um ambiente real, você faria uma consulta ao banco de dados aqui
+            if ($username === 'admin' && $password === 'admin123') {
+                $_SESSION['user_logged_in'] = true;
+                unset($_SESSION['login_error']); // Limpa qualquer erro anterior
+                header('Location: ' . DIRPAGE . 'admin'); // Redireciona para o painel
+                exit();
+            } else {
+                // Autenticação falhou
+                $_SESSION['login_error'] = 'Utilizador ou palavra-passe inválidos.';
+                header('Location: ' . DIRPAGE . 'admin/login'); // Redireciona de volta para o login
+                exit();
+            }
+        } else {
+            // Se não for POST, apenas renderiza a view de login
+            $this->setPasta("admin/login");
+            $this->renderLayout();
+        }
     }
 
     #RESPONSÁVEL POR RENDERIZAR O LAYOUT ESPECÍFICO DO ADMIN
     public function renderLayout()
     {
-        // Esta função deve carregar o layout principal do admin
-        // ou o layout de login, dependendo da ação.
-        // A lógica de qual 'Main' incluir pode ser melhorada aqui.
         include_once(DIRREQ . "app/view/LayoutAdmin.php");
     }
 }
